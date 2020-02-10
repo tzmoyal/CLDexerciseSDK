@@ -19,16 +19,14 @@ class CLDexerciseSDKTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+  func testTimeParsing() {
+    XCTAssertEqual(try validateTimeString(time: "3:5:46.2"), "11146.2")
+  }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  func testSubtitleParsing() {
+    XCTAssertEqual(try transitionSubtitlesFromSubtitlesJSON(subtitles: "{\"subtitles\": [{\"start-timing\": \"0:24.8\",\"end-timing\": \"0:27.2\",\"text\": \"Test parsing, OK\"}]}"), "l_text:arial_30:Test%2520parsing%25252C%2520OK,g_south,y_40,so_24.8,eo_27.2,co_rgb:FFFFFF/")
+  }
+  
+
 
 }

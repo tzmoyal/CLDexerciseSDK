@@ -10,6 +10,10 @@
 		096C1E3B23EC314A0091D604 /* CLDexerciseSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096C1E3123EC314A0091D604 /* CLDexerciseSDK.framework */; };
 		096C1E4023EC314A0091D604 /* CLDexerciseSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C1E3F23EC314A0091D604 /* CLDexerciseSDKTests.swift */; };
 		096C1E4223EC314A0091D604 /* CLDexerciseSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 096C1E3423EC314A0091D604 /* CLDexerciseSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		096C1E8723EF121B0091D604 /* CLDSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C1E8623EF121B0091D604 /* CLDSDK.swift */; };
+		096C1E8F23EFF4F80091D604 /* SubtitlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C1E8E23EFF4F80091D604 /* SubtitlesModel.swift */; };
+		096C1E9123EFF9620091D604 /* SubtitlesUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C1E9023EFF9620091D604 /* SubtitlesUtil.swift */; };
+		096C1E9323F000560091D604 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096C1E9223F000560091D604 /* StringUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		096C1E3A23EC314A0091D604 /* CLDexerciseSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLDexerciseSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		096C1E3F23EC314A0091D604 /* CLDexerciseSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDexerciseSDKTests.swift; sourceTree = "<group>"; };
 		096C1E4123EC314A0091D604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		096C1E8623EF121B0091D604 /* CLDSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDSDK.swift; sourceTree = "<group>"; };
+		096C1E8E23EFF4F80091D604 /* SubtitlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlesModel.swift; sourceTree = "<group>"; };
+		096C1E9023EFF9620091D604 /* SubtitlesUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlesUtil.swift; sourceTree = "<group>"; };
+		096C1E9223F000560091D604 /* StringUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,9 @@
 			children = (
 				096C1E3423EC314A0091D604 /* CLDexerciseSDK.h */,
 				096C1E3523EC314A0091D604 /* Info.plist */,
+				096C1E8623EF121B0091D604 /* CLDSDK.swift */,
+				096C1E9523F1279A0091D604 /* Models */,
+				096C1E9423F127920091D604 /* Utils */,
 			);
 			path = CLDexerciseSDK;
 			sourceTree = "<group>";
@@ -84,6 +95,23 @@
 				096C1E4123EC314A0091D604 /* Info.plist */,
 			);
 			path = CLDexerciseSDKTests;
+			sourceTree = "<group>";
+		};
+		096C1E9423F127920091D604 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				096C1E9023EFF9620091D604 /* SubtitlesUtil.swift */,
+				096C1E9223F000560091D604 /* StringUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		096C1E9523F1279A0091D604 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				096C1E8E23EFF4F80091D604 /* SubtitlesModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +176,7 @@
 				TargetAttributes = {
 					096C1E3023EC314A0091D604 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					096C1E3923EC314A0091D604 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -195,6 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				096C1E8723EF121B0091D604 /* CLDSDK.swift in Sources */,
+				096C1E9323F000560091D604 /* StringUtil.swift in Sources */,
+				096C1E8F23EFF4F80091D604 /* SubtitlesModel.swift in Sources */,
+				096C1E9123EFF9620091D604 /* SubtitlesUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +373,7 @@
 		096C1E4623EC314A0091D604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -355,6 +389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tzahimoyal.CLDexerciseSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +398,7 @@
 		096C1E4723EC314A0091D604 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -386,6 +422,7 @@
 		096C1E4923EC314A0091D604 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CLDexerciseSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +440,7 @@
 		096C1E4A23EC314A0091D604 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CLDexerciseSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
